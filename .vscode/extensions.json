@@ -1,0 +1,21 @@
+{
+  "recommendations": [
+    "johnpapa.vscode-peacock",
+    "ms-vscode.vscode-json",
+    "bradlc.vscode-tailwindcss",
+    "rangav.vscode-thunder-client",
+    "esbenp.prettier-vscode",
+    "ms-vscode.vscode-typescript-next",
+    "formulahendry.auto-rename-tag",
+    "ms-vscode.vscode-eslint",
+    "usernamehw.errorlens",
+    "gruntfuggly.todo-tree",
+    "aaron-bond.better-comments",
+    "oderwat.indent-rainbow",
+    "christian-kohler.path-intellisense",
+    "ritwickdey.liveserver",
+    "ms-vscode.live-server",
+    "redhat.vscode-yaml"
+  ],
+  "unwantedRecommendations": []
+}

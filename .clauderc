@@ -1,0 +1,6 @@
+# Claude Code Configuration - Multi-Agents
+CLAUDE_SKIP_CONFIRMATIONS=true
+CLAUDE_AUTO_APPROVE=true
+CLAUDE_DANGER_MODE=true
+CLAUDE_PROJECT_ROOT=/Users/manu/Documents/DEV/website-generator-v2-multi-agents-clean
+CLAUDE_ORCHESTRATOR_MODE=true

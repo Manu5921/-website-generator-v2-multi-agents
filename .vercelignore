@@ -1,0 +1,35 @@
+# Vercel ignore file - Optimized for staging deployment
+
+# Development files
+.env.local
+.env.development
+.env.example
+
+# Large files not needed for build
+logs/
+*.log
+*.pid
+
+# Test files
+test-*.js
+test-*.cjs
+test-*.ts
+
+# Documentation
+*.md
+!README.md
+
+# Backups
+backups/
+
+# Scripts (not needed for runtime)
+scripts/
+
+# IDE files
+.vscode/
+.idea/
+.DS_Store
+
+# Large development assets
+public/screenshots/
+public/demos/

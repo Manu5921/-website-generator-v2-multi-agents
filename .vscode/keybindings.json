@@ -1,0 +1,12 @@
+[
+  {
+    "key": "f5",
+    "command": "workbench.action.files.revert",
+    "when": "editorTextFocus && resourceExtname == '.md'"
+  },
+  {
+    "key": "cmd+r",
+    "command": "workbench.action.files.revert",
+    "when": "editorTextFocus && resourceExtname == '.md'"
+  }
+]

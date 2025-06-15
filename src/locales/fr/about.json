@@ -1,0 +1,121 @@
+{
+  "hero": {
+    "title": "Donnez à votre équipe l'état d'esprit et les outils du succès",
+    "subtitle": "Qui sommes-nous ?",
+    "description": "Depuis 2018, nous révolutionnons la façon dont les entreprises françaises utilisent leurs données pour créer des expériences client exceptionnelles."
+  },
+  "mission": {
+    "title": "Notre Mission",
+    "description": "Transformer chaque PME française en leader de son marché grâce à des outils marketing intelligents et accessibles.",
+    "values": [
+      {
+        "title": "Excellence Française",
+        "description": "Support et développement 100% français pour comprendre vos enjeux locaux"
+      },
+      {
+        "title": "Innovation Continue", 
+        "description": "Technologies de pointe pour rester toujours un pas en avance"
+      },
+      {
+        "title": "Proximité Client",
+        "description": "Relation humaine et accompagnement personnalisé pour chaque client"
+      }
+    ]
+  },
+  "stats": {
+    "title": "Nos Résultats Parlent d'Eux-Mêmes",
+    "items": [
+      {
+        "number": "80%",
+        "label": "de temps administratif en moins",
+        "description": "Automatisation intelligente des tâches répétitives"
+      },
+      {
+        "number": "40x",
+        "label": "plus de candidatures qualifiées",
+        "description": "Optimisation des processus de recrutement"
+      },
+      {
+        "number": "40%",
+        "label": "de recrutement plus rapide",
+        "description": "Processus streamlinés et efficaces"
+      },
+      {
+        "number": "€2M+",
+        "label": "économisés par nos clients",
+        "description": "Réduction des coûts d'agences de recrutement"
+      }
+    ]
+  },
+  "team": {
+    "title": "Notre Équipe Française",
+    "subtitle": "Des experts passionnés au service de votre réussite",
+    "members": [
+      {
+        "name": "Charles Dubois",
+        "role": "Fondateur & CEO",
+        "company": "BigSpring France",
+        "description": "15 ans d'expérience dans le marketing digital français. Ancien directeur marketing chez plusieurs scale-ups parisiennes.",
+        "image": "/team/charles.jpg"
+      },
+      {
+        "name": "Marie Leroy",
+        "role": "Directrice Technique",
+        "company": "BigSpring France", 
+        "description": "Ingénieure diplômée Polytechnique, spécialisée en IA et automatisation marketing.",
+        "image": "/team/marie.jpg"
+      },
+      {
+        "name": "Pierre Martin",
+        "role": "Responsable Support Client",
+        "company": "BigSpring France",
+        "description": "Expert en relation client B2B, formateur certifié en outils marketing digitaux.",
+        "image": "/team/pierre.jpg"
+      }
+    ]
+  },
+  "culture": {
+    "title": "Notre Culture d'Entreprise",
+    "subtitle": "Des valeurs qui nous guident au quotidien",
+    "principles": [
+      {
+        "title": "🎯 Obsession Client",
+        "description": "Chaque décision est prise en pensant à l'impact sur nos clients français"
+      },
+      {
+        "title": "🚀 Innovation Permanente",
+        "description": "Nous testons constamment de nouvelles approches pour rester en avance"
+      },
+      {
+        "title": "🤝 Transparence Totale",
+        "description": "Communication ouverte, tarifs clairs, résultats mesurables"
+      },
+      {
+        "title": "🌱 Croissance Partagée",
+        "description": "Votre succès est notre succès, nous grandissons ensemble"
+      }
+    ]
+  },
+  "careers": {
+    "title": "Envie de Rejoindre notre Équipe ?",
+    "subtitle": "Nous recherchons des talents passionnés pour révolutionner le marketing digital français",
+    "benefits": [
+      "Télétravail flexible",
+      "Formation continue",
+      "Participation aux bénéfices",
+      "Mutuelle premium",
+      "Tickets restaurant",
+      "RTT généreuses"
+    ],
+    "cta": "Voir les Postes Ouverts",
+    "email": "recrutement@bigspring.fr"
+  },
+  "contact": {
+    "title": "Parlons de Votre Projet",
+    "subtitle": "Notre équipe française vous accompagne dans votre transformation digitale",
+    "cta": "Prendre Rendez-vous",
+    "phone": "+33 1 23 45 67 89",
+    "email": "bonjour@bigspring.fr",
+    "address": "123 Avenue des Champs-Élysées, 75008 Paris"
+  }
+}

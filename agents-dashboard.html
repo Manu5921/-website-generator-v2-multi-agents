@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎼 Dashboard Multi-Agents - Surveillance Temps Réel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #e0e0e0;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .header h1 {
+            color: #8B5CF6;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .status-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0.5rem;
+        }
+        
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .status-online {
+            color: #10B981;
+        }
+        
+        .status-offline {
+            color: #EF4444;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+            padding: 2rem;
+            height: calc(100vh - 120px);
+        }
+        
+        .progress-panel {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            overflow-y: auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            height: 100%;
+        }
+        
+        .agent-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .agent-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+        
+        .agent-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .agent-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .agent-status {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        .status-active {
+            background: #10B981;
+        }
+        
+        .status-starting {
+            background: #F59E0B;
+        }
+        
+        .status-offline {
+            background: #EF4444;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #8B5CF6, #EC4899);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+        
+        .task-list {
+            margin-top: 1rem;
+        }
+        
+        .task-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .task-completed {
+            color: #10B981;
+        }
+        
+        .task-pending {
+            color: #6B7280;
+        }
+        
+        .auto-refresh {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #8B5CF6;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            animation: fadeInOut 2s infinite;
+        }
+        
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+        
+        .markdown-content {
+            line-height: 1.6;
+        }
+        
+        .markdown-content h1 {
+            color: #8B5CF6;
+            border-bottom: 2px solid #8B5CF6;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .markdown-content h2 {
+            color: #EC4899;
+            margin: 1.5rem 0 1rem 0;
+        }
+        
+        .markdown-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        .markdown-content th,
+        .markdown-content td {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.75rem;
+            text-align: left;
+        }
+        
+        .markdown-content th {
+            background: rgba(139, 92, 246, 0.2);
+            color: #8B5CF6;
+            font-weight: 600;
+        }
+        
+        .markdown-content code {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎼 Dashboard Multi-Agents - Surveillance Temps Réel</h1>
+        <div class="status-bar">
+            <div class="status-item">
+                <span>🎼 Chef d'Orchestre</span>
+                <span id="orchestrator-status" class="status-online">●</span>
+                <span>Port 3334</span>
+            </div>
+            <div class="status-item">
+                <span>🎨 Design IA</span>
+                <span id="design-status" class="status-online">●</span>
+                <span>Port 3335</span>
+            </div>
+            <div class="status-item">
+                <span>🤖 Automation</span>
+                <span id="automation-status" class="status-offline">●</span>
+                <span>Port 3336</span>
+            </div>
+            <div class="status-item">
+                <span>📊 Ads Management</span>
+                <span id="ads-status" class="status-offline">●</span>
+                <span>Port 3337</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <div class="progress-panel">
+            <div id="markdown-content" class="markdown-content">
+                <div style="text-align: center; padding: 2rem; color: #6B7280;">
+                    📊 Chargement du dashboard de progression...
+                </div>
+            </div>
+        </div>
+        
+        <div class="agents-grid">
+            <div class="agent-card">
+                <div class="agent-header">
+                    <span class="agent-title">🎨 Design IA</span>
+                    <div class="agent-status status-active"></div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 60%"></div>
+                </div>
+                <div>Progress: 60%</div>
+                <div class="task-list">
+                    <div class="task-item task-completed">✅ Figma API connectée</div>
+                    <div class="task-item task-completed">✅ Structure projet</div>
+                    <div class="task-item task-pending">🔄 Template restaurant</div>
+                </div>
+            </div>
+            
+            <div class="agent-card">
+                <div class="agent-header">
+                    <span class="agent-title">🤖 Automation</span>
+                    <div class="agent-status status-starting"></div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 30%"></div>
+                </div>
+                <div>Progress: 30%</div>
+                <div class="task-list">
+                    <div class="task-item task-completed">✅ Mission définie</div>
+                    <div class="task-item task-pending">🔄 Setup N8N</div>
+                    <div class="task-item task-pending">⏳ Workflows</div>
+                </div>
+            </div>
+            
+            <div class="agent-card">
+                <div class="agent-header">
+                    <span class="agent-title">📊 Ads Management</span>
+                    <div class="agent-status status-starting"></div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 20%"></div>
+                </div>
+                <div>Progress: 20%</div>
+                <div class="task-list">
+                    <div class="task-item task-completed">✅ Architecture planifiée</div>
+                    <div class="task-item task-pending">🔄 Google Ads API</div>
+                    <div class="task-item task-pending">⏳ Facebook API</div>
+                </div>
+            </div>
+            
+            <div class="agent-card">
+                <div class="agent-header">
+                    <span class="agent-title">💎 Core Platform</span>
+                    <div class="agent-status status-active"></div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 40%"></div>
+                </div>
+                <div>Progress: 40%</div>
+                <div class="task-list">
+                    <div class="task-item task-completed">✅ Base existante</div>
+                    <div class="task-item task-pending">🔄 Dashboard V2</div>
+                    <div class="task-item task-pending">⏳ Performance audit</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="auto-refresh">
+        🔄 Auto-refresh actif
+    </div>
+    
+    <script>
+        // Charger le contenu Markdown
+        async function loadMarkdownContent() {
+            try {
+                const response = await fetch('./AGENTS_PROGRESS.md');
+                const text = await response.text();
+                
+                // Conversion basique Markdown vers HTML
+                let html = text
+                    .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+                    .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+                    .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                    .replace(/`(.*?)`/g, '<code>$1</code>')
+                    .replace(/\n/g, '<br>');
+                
+                document.getElementById('markdown-content').innerHTML = html;
+            } catch (error) {
+                console.error('Erreur chargement AGENTS_PROGRESS.md:', error);
+                document.getElementById('markdown-content').innerHTML = 
+                    '<div style="color: #EF4444; text-align: center; padding: 2rem;">❌ Erreur chargement du fichier de progression</div>';
+            }
+        }
+        
+        // Vérifier le statut des agents
+        async function checkAgentStatus() {
+            const agents = [
+                { id: 'orchestrator-status', port: 3334 },
+                { id: 'design-status', port: 3335 },
+                { id: 'automation-status', port: 3336 },
+                { id: 'ads-status', port: 3337 }
+            ];
+            
+            for (const agent of agents) {
+                try {
+                    const response = await fetch(`http://localhost:${agent.port}`, { 
+                        method: 'HEAD',
+                        mode: 'no-cors',
+                        timeout: 1000 
+                    });
+                    document.getElementById(agent.id).className = 'status-online';
+                } catch (error) {
+                    document.getElementById(agent.id).className = 'status-offline';
+                }
+            }
+        }
+        
+        // Initialisation
+        loadMarkdownContent();
+        checkAgentStatus();
+        
+        // Auto-refresh toutes les 10 secondes
+        setInterval(() => {
+            loadMarkdownContent();
+            checkAgentStatus();
+        }, 10000);
+        
+        // Refresh manuel avec Cmd+R
+        document.addEventListener('keydown', (e) => {
+            if ((e.metaKey || e.ctrlKey) && e.key === 'r') {
+                e.preventDefault();
+                loadMarkdownContent();
+                checkAgentStatus();
+            }
+        });
+    </script>
+</body>
+</html>

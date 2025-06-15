@@ -1,0 +1,134 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "🎼 Start Orchestrator",
+      "type": "shell",
+      "command": "npm run dev",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "🎨 Start Design AI Agent",
+      "type": "shell", 
+      "command": "npm run dev",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always", 
+        "focus": false,
+        "panel": "new",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "options": {
+        "cwd": "/Users/manu/Documents/DEV/website-generator-design-ai"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "🤖 Start Automation Agent",
+      "type": "shell",
+      "command": "npm run dev", 
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false, 
+        "panel": "new",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "options": {
+        "cwd": "/Users/manu/Documents/DEV/website-generator-automation"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "📊 Start Ads Agent", 
+      "type": "shell",
+      "command": "npm run dev",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new", 
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "options": {
+        "cwd": "/Users/manu/Documents/DEV/website-generator-ads"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "💎 Start Core Agent",
+      "type": "shell",
+      "command": "npm run dev",
+      "group": "build", 
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "options": {
+        "cwd": "/Users/manu/Documents/DEV/website-generator-core"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "🚀 Start All Agents",
+      "dependsOn": [
+        "🎼 Start Orchestrator",
+        "🎨 Start Design AI Agent", 
+        "🤖 Start Automation Agent",
+        "📊 Start Ads Agent",
+        "💎 Start Core Agent"
+      ],
+      "dependsOrder": "parallel",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "🔄 Sync All Agents",
+      "type": "shell",
+      "command": "./scripts/sync-agents.sh",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "🧪 Test All Agents",
+      "type": "shell", 
+      "command": "./scripts/test-agents.sh",
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      }
+    }
+  ]
+}

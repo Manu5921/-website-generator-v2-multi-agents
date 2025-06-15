@@ -1,0 +1,11 @@
+{
+  "name": "automation",
+  "description": "Agent Automation - N8N + Agents IA", 
+  "permissions": ["n8n", "webhooks", "apis", "database"],
+  "servers": {
+    "n8n-mcp": {
+      "command": "npx", 
+      "args": ["@n8n/mcp-server"]
+    }
+  }
+}

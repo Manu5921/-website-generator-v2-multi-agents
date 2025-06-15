@@ -1,0 +1,11 @@
+{
+  "name": "design-ai", 
+  "description": "Agent Design IA - Figma MCP + Génération",
+  "permissions": ["figma", "images", "files", "git"],
+  "servers": {
+    "figma-mcp": {
+      "command": "npx",
+      "args": ["@figma/mcp-server"]
+    }
+  }
+}

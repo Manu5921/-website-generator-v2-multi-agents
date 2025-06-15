@@ -1,0 +1,31 @@
+{
+  "project_name": "Chef d'Orchestre",
+  "auto_approve": true,
+  "skip_confirmations": true,
+  "allowed_operations": [
+    "file_read",
+    "file_write", 
+    "file_create",
+    "file_delete",
+    "directory_create",
+    "npm_install",
+    "npm_run",
+    "git_add",
+    "git_commit", 
+    "git_push",
+    "git_pull",
+    "bash_commands",
+    "curl_requests",
+    "api_calls"
+  ],
+  "trusted_domains": [
+    "api.figma.com",
+    "api.openai.com",
+    "api.anthropic.com",
+    "googleapis.com",
+    "graph.facebook.com",
+    "api.stripe.com",
+    "api.n8n.io"
+  ],
+  "development_mode": true
+}

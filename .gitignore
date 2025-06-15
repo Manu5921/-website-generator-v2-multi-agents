@@ -1,0 +1,18 @@
+.vercel
+# Build files
+.next/
+node_modules/
+.env.local
+.env.production
+
+# Large binary files
+*.pack
+*.node
+*.woff2
+*.ico
+
+# Cache and logs
+.DS_Store
+*.log
+logs/
+node_modules/

@@ -1,82 +1,58 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { db } from '@/lib/db';
-import { demandesClients, InsertDemandeClient } from '@/lib/db/schema';
-import { emailClient } from '@/lib/email/client';
+
+// Simulation d'une base de données en mémoire partagée
+let demandes: any[] = [];
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
+    const data = await request.json();
     
-    // Validation des données
-    const { nom, email, entreprise, ville, telephone, slogan } = body;
-    
-    if (!nom || !email || !entreprise || !ville || !telephone) {
+    // Validation basique
+    if (!data.nom || !data.email || !data.secteur || !data.telephone) {
       return NextResponse.json(
         { error: 'Tous les champs obligatoires doivent être remplis' },
         { status: 400 }
       );
     }
 
-    // Validation email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return NextResponse.json(
-        { error: 'Email invalide' },
-        { status: 400 }
-      );
-    }
-
-    // Insérer la demande en base
-    const nouvelleDemande: InsertDemandeClient = {
-      nom: nom.trim(),
-      email: email.trim().toLowerCase(),
-      entreprise: entreprise.trim(),
-      ville: ville.trim(),
-      telephone: telephone.trim(),
-      slogan: slogan?.trim() || null,
-      statut: 'nouvelle'
+    // Créer nouvelle demande
+    const nouvelleDemande = {
+      id: `DEM_${Date.now()}`,
+      nom: data.nom,
+      secteur: data.secteur,
+      email: data.email,
+      telephone: data.telephone,
+      description: data.description || '',
+      statut: 'Nouvelle',
+      dateCreation: new Date().toISOString(),
+      dateGeneration: null,
+      dateTermine: null,
+      siteUrl: null
     };
-
-    const [demandeCree] = await db
-      .insert(demandesClients)
-      .values(nouvelleDemande)
-      .returning();
-
-    console.log('✅ Nouvelle demande créée:', {
-      id: demandeCree.id,
-      entreprise: demandeCree.entreprise,
-      email: demandeCree.email
-    });
-
-    // Envoyer email de confirmation au client
-    try {
-      await emailClient.sendDemandeConfirmation({
-        clientEmail: demandeCree.email,
-        clientNom: demandeCree.nom,
-        entreprise: demandeCree.entreprise
-      });
-      console.log('✅ Email de confirmation envoyé');
-    } catch (emailError) {
-      console.error('⚠️ Erreur envoi email (demande créée quand même):', emailError);
-      // On ne fait pas échouer la demande si l'email échoue
-    }
-
-    // TODO: Notifier l'admin (webhook, email admin, etc.)
     
+    // Ajouter à la liste
+    demandes.push(nouvelleDemande);
+    
+    console.log('Nouvelle demande reçue:', nouvelleDemande);
+    
+    // Réponse de succès
     return NextResponse.json({
       success: true,
-      message: 'Demande créée avec succès',
-      id: demandeCree.id
+      message: 'Demande reçue avec succès !',
+      demandeId: nouvelleDemande.id,
+      data: {
+        nom: data.nom,
+        secteur: data.secteur,
+        email: data.email,
+        statut: 'En cours de traitement',
+        tempsEstime: '25 minutes'
+      }
     });
 
   } catch (error) {
-    console.error('❌ Erreur création demande:', error);
-    
+    console.error('Erreur lors du traitement de la demande:', error);
     return NextResponse.json(
-      { 
-        error: 'Erreur interne du serveur',
-        details: process.env.NODE_ENV === 'development' ? (error as Error).message : undefined
-      },
+      { error: 'Erreur interne du serveur' },
       { status: 500 }
     );
   }
@@ -84,22 +60,14 @@ export async function POST(request: NextRequest) {
 
 export async function GET() {
   try {
-    // API pour lister les demandes (admin seulement)
-    // TODO: Ajouter authentification admin
-    
-    const demandes = await db
-      .select()
-      .from(demandesClients)
-      .orderBy(demandesClients.dateCreation);
-
+    // Retourner toutes les demandes pour le dashboard
     return NextResponse.json({
       success: true,
-      demandes
+      demandes: demandes.reverse(), // Plus récentes en premier
+      total: demandes.length
     });
-
   } catch (error) {
-    console.error('❌ Erreur récupération demandes:', error);
-    
+    console.error('Erreur lors de la récupération des demandes:', error);
     return NextResponse.json(
       { error: 'Erreur interne du serveur' },
       { status: 500 }

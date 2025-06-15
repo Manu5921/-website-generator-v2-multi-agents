@@ -1,0 +1,7 @@
+{
+  "name": "orchestrator",
+  "description": "Chef d'Orchestre - Supervision Multi-Agents",
+  "permissions": ["full"],
+  "auto_approve": true,
+  "skip_confirmations": true
+}

@@ -1,0 +1,93 @@
+{
+  "title": "Nos Tarifs Transparents",
+  "subtitle": "Tout ce dont vous avez besoin pour un service d'exception",
+  "currency": "€",
+  "billing": {
+    "monthly": "Mensuel",
+    "yearly": "Annuel",
+    "save": "Économisez 20%"
+  },
+  "plans": {
+    "basic": {
+      "name": "Starter",
+      "price": "GRATUIT",
+      "period": "",
+      "description": "Parfait pour commencer",
+      "popular": false,
+      "features": [
+        "Service Express",
+        "Traitement Prioritaire", 
+        "Services Urgents",
+        "Support Email",
+        "1 Utilisateur"
+      ],
+      "cta": "Commencer GRATUITEMENT",
+      "highlight": "Aucune carte bancaire requise"
+    },
+    "professional": {
+      "name": "Professionnel",
+      "price": "49",
+      "period": "/mois",
+      "description": "Idéal pour les professionnels",
+      "popular": true,
+      "features": [
+        "Tout du plan Starter, plus :",
+        "Cloud Professionnel",
+        "Tableau de Bord Avancé",
+        "Support Téléphonique FR",
+        "5 Utilisateurs",
+        "Intégrations Premium"
+      ],
+      "cta": "Essayer 30 jours GRATUIT",
+      "highlight": "Le plus populaire"
+    },
+    "business": {
+      "name": "Entreprise",
+      "price": "199", 
+      "period": "/mois",
+      "description": "Pour les grandes entreprises",
+      "popular": false,
+      "features": [
+        "Tout du plan Professionnel, plus :",
+        "Utilisateurs illimités",
+        "Support Prioritaire 24/7",
+        "Account Manager dédié",
+        "Formations personnalisées",
+        "API complète"
+      ],
+      "cta": "Contacter l'équipe",
+      "highlight": "Support dédié inclus"
+    }
+  },
+  "faq": {
+    "title": "Questions Fréquentes",
+    "items": [
+      {
+        "question": "Puis-je changer de plan à tout moment ?",
+        "answer": "Oui, vous pouvez upgrader ou downgrader votre plan à tout moment. Les changements prennent effet immédiatement."
+      },
+      {
+        "question": "Y a-t-il des frais de setup ?",
+        "answer": "Non, aucun frais de setup. Vous ne payez que votre abonnement mensuel ou annuel."
+      },
+      {
+        "question": "Proposez-vous un support en français ?",
+        "answer": "Oui ! Notre équipe support française est disponible 24h/24 pour vous accompagner."
+      },
+      {
+        "question": "Comment fonctionne l'essai gratuit ?",
+        "answer": "30 jours d'essai gratuit, sans engagement. Aucune carte bancaire requise pour commencer."
+      }
+    ]
+  },
+  "guarantee": {
+    "title": "Garantie Satisfait ou Remboursé",
+    "description": "Si vous n'êtes pas 100% satisfait dans les 30 premiers jours, nous vous remboursons intégralement.",
+    "badge": "30 jours garantis"
+  },
+  "contact": {
+    "title": "Besoin d'un plan sur mesure ?",
+    "description": "Notre équipe française vous accompagne pour créer la solution parfaite pour votre entreprise.",
+    "cta": "Parlons de votre projet"
+  }
+}

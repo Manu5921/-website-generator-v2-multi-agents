@@ -1,0 +1,63 @@
+{
+  "navigation": {
+    "company": {
+      "title": "Entreprise",
+      "about": "À Propos",
+      "team": "Équipe", 
+      "howItWorks": "Comment ça Marche",
+      "careers": "Recrutement"
+    },
+    "product": {
+      "title": "Produits",
+      "crm": "CRM",
+      "helpDesk": "Service Client",
+      "workplace": "Espace de Travail",
+      "analytics": "Analytics"
+    },
+    "support": {
+      "title": "Support",
+      "faq": "FAQ",
+      "contact": "Contact",
+      "privacy": "Politique de Confidentialité",
+      "terms": "Conditions Générales"
+    }
+  },
+  "buttons": {
+    "tryFree": "Essai GRATUIT",
+    "getDemo": "Démo Personnalisée",
+    "contactUs": "Devis Immédiat",
+    "getStarted": "COMMANDER MAINTENANT",
+    "getStartedFree": "Commencer GRATUITEMENT",
+    "learnMore": "En Savoir Plus",
+    "readMore": "Lire la Suite",
+    "viewAll": "Voir Tout",
+    "downloadGuide": "Télécharger le Guide",
+    "talkProject": "Parlons de votre projet"
+  },
+  "social": {
+    "followUs": "Suivez-nous",
+    "facebook": "Facebook",
+    "twitter": "Twitter", 
+    "linkedin": "LinkedIn",
+    "instagram": "Instagram"
+  },
+  "footer": {
+    "description": "BigSpring - La plateforme marketing digital qui transforme votre business en France",
+    "copyright": "© 2024 BigSpring France. Tous droits réservés.",
+    "legal": "Mentions Légales",
+    "sitemap": "Plan du Site"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "success": "Succès",
+    "email": "Email",
+    "phone": "Téléphone",
+    "name": "Nom",
+    "company": "Entreprise",
+    "message": "Message",
+    "send": "Envoyer",
+    "required": "Obligatoire",
+    "optional": "Optionnel"
+  }
+}

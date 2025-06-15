@@ -1,0 +1,79 @@
+{
+  "hero": {
+    "title": "Transformez vos défis web en opportunités business",
+    "subtitle": "LA plateforme tout-en-un pour créer, partager et réussir",
+    "description": "Conçue spécialement pour VOUS et votre croissance",
+    "cta": "Démo Gratuite en 2 min",
+    "ctaSecondary": "Devis Immédiat",
+    "trustBadge": "Rejoignez 1000+ entreprises françaises qui nous font confiance"
+  },
+  "features": {
+    "title": "Pourquoi BigSpring révolutionne votre marketing",
+    "subtitle": "Des outils puissants pour des résultats exceptionnels",
+    "cloud": {
+      "title": "Support Cloud 24/7",
+      "description": "Infrastructure sécurisée et support technique français permanent"
+    },
+    "architecture": {
+      "title": "Architecture Moderne",
+      "description": "Technologie de pointe pour des performances optimales"
+    },
+    "service": {
+      "title": "Service 24h/24",
+      "description": "Équipe française disponible à tout moment pour vous accompagner"
+    },
+    "response": {
+      "title": "Réponse Ultra-Rapide",
+      "description": "Temps de réponse record pour ne jamais ralentir votre business"
+    }
+  },
+  "stats": {
+    "title": "Des résultats qui parlent",
+    "customers": {
+      "number": "1000+",
+      "label": "Entreprises françaises"
+    },
+    "growth": {
+      "number": "150%",
+      "label": "Croissance moyenne"
+    },
+    "time": {
+      "number": "20h/sem",
+      "label": "Temps économisé"
+    },
+    "satisfaction": {
+      "number": "98%",
+      "label": "Satisfaction client"
+    }
+  },
+  "testimonials": {
+    "title": "Ce que disent nos clients français",
+    "subtitle": "Des témoignages authentiques d'entrepreneurs comme vous",
+    "items": [
+      {
+        "quote": "Grâce à BigSpring, notre chiffre d'affaires a augmenté de 150% en 6 mois. L'interface est intuitive et le support technique français est exceptionnel.",
+        "author": "Marie Dubois",
+        "role": "Directrice Marketing",
+        "company": "Restaurant Le Petit Français"
+      },
+      {
+        "quote": "BigSpring nous a fait économiser 20h/semaine sur notre marketing. Nous pouvons enfin nous concentrer sur nos clients !",
+        "author": "Sophie Lévy", 
+        "role": "Fondatrice",
+        "company": "Cabinet d'Avocats Lévy & Associés"
+      },
+      {
+        "quote": "Interface intuitive, support réactif, résultats au rendez-vous ! BigSpring a transformé notre visibilité en ligne.",
+        "author": "Jean-Pierre Martin",
+        "role": "Gérant",
+        "company": "Coiffure Style & Tendance"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Prêt à transformer votre business ?",
+    "subtitle": "Rejoignez les 1000+ entreprises françaises qui ont choisi BigSpring",
+    "button": "Démo Gratuite Maintenant",
+    "guarantee": "Essai gratuit 30 jours • Sans engagement • Support français"
+  }
+}

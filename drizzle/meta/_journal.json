@@ -8,6 +8,20 @@
       "when": 1749906715068,
       "tag": "0000_magical_inhumans",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1749997837821,
+      "tag": "0001_lowly_wendigo",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1750019478039,
+      "tag": "0002_wet_kylun",
+      "breakpoints": true
     }
   ]
 }

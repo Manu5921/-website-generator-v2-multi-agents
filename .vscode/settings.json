@@ -1,0 +1,89 @@
+{
+  "peacock.affectActivityBar": true,
+  "peacock.affectStatusBar": true,
+  "peacock.affectTitleBar": true,
+  "peacock.color": "#8B5CF6",
+  "peacock.remoteColor": "#8B5CF6",
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#9d70f7",
+    "activityBar.activeBorder": "#f5f0ff",
+    "activityBar.background": "#8B5CF6",
+    "activityBar.foreground": "#ffffff",
+    "activityBar.inactiveForeground": "#e0e7ff",
+    "activityBarBadge.background": "#ffd700",
+    "activityBarBadge.foreground": "#000000",
+    "editorGroup.border": "#9d70f7",
+    "panel.border": "#9d70f7",
+    "sash.hoverBorder": "#9d70f7",
+    "sideBar.border": "#9d70f7",
+    "statusBar.background": "#8B5CF6",
+    "statusBar.foreground": "#ffffff",
+    "statusBarItem.hoverBackground": "#9d70f7",
+    "statusBarItem.remoteBackground": "#8B5CF6",
+    "statusBarItem.remoteForeground": "#ffffff",
+    "titleBar.activeBackground": "#8B5CF6",
+    "titleBar.activeForeground": "#ffffff",
+    "titleBar.inactiveBackground": "#7c3aed",
+    "titleBar.inactiveForeground": "#e0e7ff"
+  },
+  "claude.autoApprove": true,
+  "claude.skipConfirmations": true,
+  "claude.dangerMode": true,
+  "claude.agent.mode": "orchestrator",
+  "claude.project.root": "/Users/manu/Documents/DEV/website-generator-v2-multi-agents-clean",
+  "terminal.integrated.defaultProfile.osx": "bash",
+  "terminal.integrated.profiles.osx": {
+    "bash": {
+      "path": "/bin/bash",
+      "args": ["-l"],
+      "env": {
+        "CLAUDE_SKIP_CONFIRMATIONS": "true",
+        "CLAUDE_AUTO_APPROVE": "true",
+        "CLAUDE_ORCHESTRATOR_MODE": "true"
+      }
+    }
+  },
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.git": false,
+    "**/.DS_Store": true,
+    "**/SECRETS_MEMO.md": true
+  },
+  "git.autofetch": true,
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "npm.enableRunFromFolder": true,
+  
+  "files.watcherExclude": {
+    "**/node_modules": true,
+    "**/.git": true,
+    "**/logs": false
+  },
+  
+  "autoRefresh.files": [
+    "AGENTS_PROGRESS.md",
+    "logs/*.log"
+  ],
+  
+  "autoRefresh.interval": 10000,
+  
+  "markdown.preview.refreshOnFileChange": true,
+  "markdown.preview.scrollPreviewWithEditor": true,
+  
+  "liveServer.settings.donotVerifyTags": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.CustomBrowser": "default",
+  "liveServer.settings.root": "/",
+  "liveServer.settings.file": "AGENTS_PROGRESS.md",
+  "liveServer.settings.port": 5500,
+  "liveServer.settings.mount": [["/", "./"]],
+  "liveServer.settings.proxy": {
+    "enable": false
+  },
+  "liveServer.settings.ignoreFiles": [
+    ".vscode/**",
+    "**/*.scss",
+    "**/*.sass",
+    "logs/**"
+  ]
+}

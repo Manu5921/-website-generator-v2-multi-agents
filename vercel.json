@@ -2,11 +2,35 @@
   "functions": {
     "src/app/api/stripe/checkout/route.ts": {
       "maxDuration": 30
+    },
+    "src/app/api/system/metrics/route.ts": {
+      "maxDuration": 10
+    },
+    "src/app/api/health/route.ts": {
+      "maxDuration": 5
+    },
+    "src/app/api/demandes/route.ts": {
+      "maxDuration": 15
+    },
+    "src/app/api/orchestration/route.ts": {
+      "maxDuration": 60
+    },
+    "src/app/api/orchestration/webhooks/route.ts": {
+      "maxDuration": 30
+    },
+    "src/app/api/orchestration/workflow/route.ts": {
+      "maxDuration": 60
+    },
+    "src/app/api/workflows/execute/route.ts": {
+      "maxDuration": 60
+    },
+    "src/app/api/webhooks/polar/route.ts": {
+      "maxDuration": 30
     }
   },
   "headers": [
     {
-      "source": "/api/stripe/(.*)",
+      "source": "/api/(.*)",
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
@@ -14,13 +38,26 @@
         },
         {
           "key": "Access-Control-Allow-Methods",
-          "value": "POST, OPTIONS"
+          "value": "GET, POST, PUT, DELETE, OPTIONS"
         },
         {
           "key": "Access-Control-Allow-Headers",
-          "value": "Content-Type"
+          "value": "Content-Type, Authorization, polar-signature"
         }
       ]
+    }
+  ],
+  "regions": ["iad1"],
+  "crons": [
+    {
+      "path": "/api/system/metrics",
+      "schedule": "0 0 * * *"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/dashboard-v2",
+      "destination": "/dashboard-v2"
     }
   ]
 }

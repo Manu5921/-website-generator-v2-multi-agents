@@ -1,0 +1,115 @@
+{
+  "pages": {
+    "homepage": {
+      "title": "BigSpring - Plateforme Marketing Digital France | Croissance PME",
+      "description": "Plateforme marketing digital #1 en France. Transformez votre PME avec BigSpring : automatisation, CRM, analytics. Démo gratuite + essai 30 jours.",
+      "keywords": "plateforme marketing digital france, logiciel marketing automation, crm pme francaise, outils marketing digital, croissance business france"
+    },
+    "about": {
+      "title": "À Propos BigSpring France | Équipe Marketing Digital Expert",
+      "description": "Découvrez BigSpring France : équipe experte en marketing digital, 1000+ PME accompagnées, support français 24/7. Innovation & proximité client.",
+      "keywords": "agence marketing digital france, equipe marketing expert, support client francais, innovation marketing digital"
+    },
+    "pricing": {
+      "title": "Tarifs BigSpring France | Plans Marketing Digital Transparents",
+      "description": "Tarifs transparents BigSpring : Gratuit à 199€/mois. Plans adaptés PME et grandes entreprises. Essai 30 jours gratuit + support français inclus.",
+      "keywords": "tarifs marketing digital, prix logiciel marketing, abonnement marketing automation, essai gratuit marketing"
+    },
+    "blog": {
+      "title": "Blog Marketing Digital France | Conseils & Stratégies BigSpring",
+      "description": "Blog marketing digital français : conseils experts, stratégies PME, cas clients, tendances digitales. Boostez votre croissance avec BigSpring.",
+      "keywords": "blog marketing digital france, conseils marketing pme, strategies digitales, cas clients marketing"
+    },
+    "contact": {
+      "title": "Contact BigSpring France | Devis Marketing Digital Gratuit",
+      "description": "Contactez BigSpring France : devis marketing digital gratuit, consultation personnalisée, équipe française disponible 24/7. Transformons votre business !",
+      "keywords": "contact marketing digital france, devis gratuit marketing, consultation marketing digitale, expert marketing france"
+    }
+  },
+  "localSeo": {
+    "business": {
+      "name": "BigSpring France",
+      "description": "Plateforme marketing digital pour PME françaises",
+      "address": "123 Avenue des Champs-Élysées, 75008 Paris, France",
+      "phone": "+33 1 23 45 67 89",
+      "email": "bonjour@bigspring.fr",
+      "hours": "Lun-Ven 9h-18h, Support 24/7",
+      "services": [
+        "Marketing Automation",
+        "CRM pour PME",
+        "Analytics Business",
+        "Support Client Digital",
+        "Formation Marketing Digital"
+      ]
+    },
+    "regions": [
+      "Paris",
+      "Lyon", 
+      "Marseille",
+      "Toulouse",
+      "Nice",
+      "Nantes",
+      "Strasbourg",
+      "Montpellier",
+      "Bordeaux",
+      "Lille"
+    ]
+  },
+  "keywords": {
+    "primary": [
+      "plateforme marketing digital france",
+      "logiciel marketing automation",
+      "crm pme française",
+      "outils marketing digital",
+      "croissance business france"
+    ],
+    "secondary": [
+      "marketing digital pme",
+      "automatisation marketing france",
+      "logiciel crm français",
+      "outils digitaux entreprise",
+      "plateforme growth hacking",
+      "marketing automation saas",
+      "solution marketing digitale"
+    ],
+    "longtail": [
+      "meilleur logiciel marketing digital france",
+      "créer campagne marketing automatisée",
+      "plateforme tout-en-un pme française",
+      "solution marketing automation française",
+      "logiciel crm gratuit entreprise française",
+      "outil marketing digital tarif transparent",
+      "plateforme marketing pme prix abordable"
+    ]
+  },
+  "content": {
+    "schemas": {
+      "organization": {
+        "@type": "Organization",
+        "name": "BigSpring France",
+        "url": "https://bigspring-france.com",
+        "logo": "https://bigspring-france.com/logo.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+33-1-23-45-67-89",
+          "contactType": "customer service",
+          "availableLanguage": "French"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "123 Avenue des Champs-Élysées",
+          "addressLocality": "Paris",
+          "postalCode": "75008",
+          "addressCountry": "FR"
+        }
+      },
+      "service": {
+        "@type": "Service",
+        "name": "Plateforme Marketing Digital",
+        "provider": "BigSpring France",
+        "description": "Solution marketing digital complète pour PME françaises",
+        "areaServed": "France"
+      }
+    }
+  }
+}

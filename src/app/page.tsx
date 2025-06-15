@@ -1,98 +1,51 @@
-import Link from 'next/link';
-
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100">
-      <div className="container mx-auto px-6 py-12">
-        
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            🌐 Website Generator Platform
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Plateforme complète de génération automatique de sites web professionnels 
-            avec paiement et maintenance intégrés.
-          </p>
-        </div>
-
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          
-          {/* Client Interface */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-200">
-            <div className="text-center">
-              <div className="text-4xl mb-4">👤</div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                Interface Client
-              </h2>
-              <p className="text-gray-600 mb-6">
-                Formulaire simple pour que les clients puissent demander 
-                leur site web professionnel.
-              </p>
-              <Link 
-                href="/demande"
-                className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors inline-block"
-              >
-                📝 Demander un site
-              </Link>
-            </div>
-          </div>
-
-          {/* Admin Dashboard */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-200">
-            <div className="text-center">
-              <div className="text-4xl mb-4">⚙️</div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                Dashboard Admin
-              </h2>
-              <p className="text-gray-600 mb-6">
-                Interface complète pour gérer les demandes, paiements 
-                et génération des sites.
-              </p>
-              <Link 
-                href="/dashboard"
-                className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-block"
-              >
-                🔧 Accès admin
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Features */}
-        <div className="mt-16 bg-white rounded-2xl shadow-xl p-8 max-w-5xl mx-auto">
-          <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            ✨ Fonctionnalités
-          </h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="text-3xl mb-4">🔶</div>
-              <h4 className="font-semibold text-gray-900 mb-2">Paiement Stripe</h4>
-              <p className="text-gray-600">Solution de paiement sécurisée</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="text-3xl mb-4">🤖</div>
-              <h4 className="font-semibold text-gray-900 mb-2">Génération Auto</h4>
-              <p className="text-gray-600">Sites professionnels par secteur</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="text-3xl mb-4">📊</div>
-              <h4 className="font-semibold text-gray-900 mb-2">Dashboard</h4>
-              <p className="text-gray-600">Gestion complète des clients</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Status */}
-        <div className="mt-12 text-center">
-          <div className="inline-flex items-center bg-green-100 text-green-800 px-4 py-2 rounded-full">
-            <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
-            Système 100% opérationnel avec Stripe
-          </div>
+    <div style={{ padding: '40px', textAlign: 'center', fontFamily: 'Arial, sans-serif' }}>
+      <h1 style={{ fontSize: '3rem', marginBottom: '20px', color: '#333' }}>
+        🚀 Website Generator V2 Multi-Agents
+      </h1>
+      <p style={{ fontSize: '1.2rem', marginBottom: '30px', color: '#666' }}>
+        Système 100% opérationnel sur Vercel !
+      </p>
+      
+      <div style={{ marginTop: '40px' }}>
+        <h2 style={{ color: '#333' }}>🎯 Pages Disponibles</h2>
+        <ul style={{ listStyle: 'none', padding: 0, fontSize: '1.1rem' }}>
+          <li style={{ margin: '10px 0' }}><a href="/showcase" style={{ color: '#0066cc' }}>🎨 Showcase Templates</a></li>
+          <li style={{ margin: '10px 0' }}><a href="/demande-publique" style={{ color: '#0066cc' }}>📝 Formulaire Public</a></li>
+          <li style={{ margin: '10px 0' }}><a href="/dashboard" style={{ color: '#0066cc' }}>⚙️ Dashboard</a></li>
+          <li style={{ margin: '10px 0' }}><a href="/simple" style={{ color: '#0066cc' }}>📊 Status Simple</a></li>
+        </ul>
+      </div>
+      
+      <div style={{ 
+        marginTop: '40px', 
+        padding: '20px', 
+        background: '#f0f9ff', 
+        borderRadius: '10px',
+        maxWidth: '600px',
+        margin: '40px auto 0'
+      }}>
+        <h3 style={{ color: '#333' }}>💰 Workflow Business</h3>
+        <p style={{ color: '#555' }}>399€ → Site généré en 25 minutes</p>
+        <p style={{ color: '#555' }}>Système multi-agents parallèles opérationnel</p>
+        <div style={{ 
+          display: 'inline-flex', 
+          alignItems: 'center', 
+          background: '#dcfce7', 
+          color: '#166534', 
+          padding: '8px 16px', 
+          borderRadius: '20px',
+          marginTop: '10px'
+        }}>
+          <div style={{ 
+            width: '8px', 
+            height: '8px', 
+            background: '#22c55e', 
+            borderRadius: '50%', 
+            marginRight: '8px' 
+          }}></div>
+          Système 100% opérationnel
         </div>
       </div>
     </div>
