@@ -1,0 +1,33 @@
+# COMMANDES POUR CONFIGURER LES VARIABLES VERCEL (si vous préférez la CLI)
+
+# Variables essentielles (obligatoires) :
+vercel env add NEXTAUTH_SECRET production
+# Valeur: 5u61zO6lWjihY0Rb3LNefHEJLApoPdwjLwjkwrx6CFM=
+
+vercel env add NEXTAUTH_URL production  
+# Valeur: https://website-generator-platform-emmanuelclarisse-6154s-projects.vercel.app
+
+vercel env add DATABASE_URL production
+# Valeur: postgresql://website-generator-platform_owner:npg_qWuJ32CHtVjs@ep-snowy-snowflake-a9a4wiek-pooler.gwc.azure.neon.tech/website-generator-platform?sslmode=require
+
+vercel env add POLAR_ACCESS_TOKEN production
+# Valeur: polar_oat_8W2MdX23gFcZDDjNdfYT0QRwh4MVcyMUbF6n03yJCVJ
+
+vercel env add POLAR_ORGANIZATION_ID production
+# Valeur: 8eaa364c-9b45-4b44-a3c9-eb0412b55820
+
+vercel env add POLAR_MODE production
+# Valeur: production
+
+vercel env add POLAR_SITE_CREATION_PRODUCT_ID production
+# Valeur: cb38ebe0-c9a2-4db8-936e-be7285461670
+
+vercel env add POLAR_MAINTENANCE_PRODUCT_ID production
+# Valeur: 3ddebe61-5143-4dc8-887d-33189c5842ca
+
+vercel env add APP_URL production
+# Valeur: https://website-generator-platform-emmanuelclarisse-6154s-projects.vercel.app
+
+# Variables optionnelles (pour plus tard) :
+# SMTP_HOST, SMTP_USER, SMTP_PASS (pour emails)
+# GITHUB_TOKEN (pour génération automatique)
